@@ -1,0 +1,1 @@
+All development as of 9-10-13 has been stopped on the python 2.6.6 version of this script.  While it is pretty much functional it may require some manual changes and tweaks to get it fully functional.
