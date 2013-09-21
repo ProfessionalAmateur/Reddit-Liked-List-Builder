@@ -99,12 +99,13 @@ def process_reddit_data():
 
             liked_json = json.loads(liked_json)["data"]["children"]
             for titles in liked_json:
-                if not configVal.get('WAYPOINT', 'beforeLinkName'):
+                iCounter += 1
+                if (iCounter == 1):
                     write_config_values(titles["data"]["name"])
 
                 if(titles["data"]["subreddit"]==subreddit and titles["data"]["media"] is not None):
-                    iCounter += 1
                     tmpfile.write(bytes('<a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><br/>\n', 'utf-8' ))
+
     except Exception as e:
         logging.error(e)
         
@@ -142,22 +143,21 @@ def updated_timestamp():
 def write_output():
     global tmpfile
     try:
-        if(iCounter>0):
-            if os.path.exists(final_file_location):
-                #final output file aleady exists, we need to append new data.
-                f2 = open(final_file_location, 'r')
-                for i in range(1):
-                    next(f2)
-                for line in f2:
-                    tmpfile.write(bytes(line, 'utf-8'))
-                f2.close()
+        if os.path.exists(final_file_location):
+            #final output file aleady exists, we need to append new data.
+            f2 = open(final_file_location, 'r')
+            for i in range(1):
+                next(f2)
+            for line in f2:
+                tmpfile.write(bytes(line, 'utf-8'))
+            f2.close()
 
-            tmpfile.seek(0)
-            f = open(final_file_location, 'wb')
-            f.write(bytes(updated_timestamp(), 'utf-8'))
-            for line in tmpfile:
-                f.write(bytes(line))
-            f.close()
+        tmpfile.seek(0)
+        f = open(final_file_location, 'wb')
+        f.write(bytes(updated_timestamp(), 'utf-8'))
+        for line in tmpfile:
+            f.write(bytes(line))
+        f.close()
 
         tmpfile.close()
     except Exception as e:
