@@ -10,18 +10,18 @@ Usage
 1. Download the redditlikedlist.py and rll.cfg to a directory of your choice.
 2. Populate the following fields in the rll.cfg file:
     
-    [PATHS]
-    outputfile = The destination of the output file.  Example: /home/John/musiclist.HTML
-    subreddit = The subreddit you want to parse from.  Example: electronicmusic
-
-    [WAYPOINT]
-    beforelinkname = (leave blank, the script will populate)
-
-    [CREDENTIALS]
-    username = Your Reddit username, must have a valid Reddit account to use this script.
-    password = Your Reddit password, must have a valid Reddit account to use this script.
-    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse
-
+    [PATHS]  
+    outputfile = The destination of the output file.  Example: /home/John/musiclist.HTML  
+    subreddit = The subreddit you want to parse from.  Example: electronicmusic  
+  
+    [WAYPOINT]  
+    beforelinkname = (leave blank, the script will populate)  
+  
+    [CREDENTIALS]  
+    username = Your Reddit username, must have a valid Reddit account to use this script.  
+    password = Your Reddit password, must have a valid Reddit account to use this script.  
+    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse  
+  
 3. Run the python script passing the configuration file location as a parameter:
 
     $> python redditlikedlist.py rll.cfg
@@ -41,6 +41,7 @@ The HTML file output will contain the last processed date stamp as well as a lis
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 4</a><br/>
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 5</a><br/>
 
-To-do wishlist:
+To-do wishlist
+---------------
 - Validate Youtube links are still valid (i.e. not pulled by record labels or deleted by YouTube poster
 - Incorporate more than 1 subreddit to parse in config file.
