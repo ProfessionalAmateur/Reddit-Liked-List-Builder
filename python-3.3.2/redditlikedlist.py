@@ -137,7 +137,7 @@ def write_config_values(before_link):
 
 def updated_timestamp():
     ts = time.time()
-    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    st = datetime.datetime.fromtimestamp(ts).strftime('%m-%d-%Y %H:%M:%S')
     return("Last updated at: " + st + "<br/><br/>\n")
         
 def write_output():
