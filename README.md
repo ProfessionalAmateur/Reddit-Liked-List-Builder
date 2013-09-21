@@ -45,3 +45,4 @@ To-do wishlist
 ---------------
 - Validate Youtube links are still valid (i.e. not pulled by record labels or deleted by YouTube poster
 - Incorporate more than 1 subreddit to parse in config file.
+- Add list sorting
