@@ -43,6 +43,6 @@ The HTML file output will contain the last processed date stamp as well as a lis
 
 To-do wishlist
 ---------------
-- Validate Youtube links are still valid (i.e. not pulled by record labels or deleted by YouTube poster
+- Validate Youtube links are still valid (i.e. not pulled by record labels or deleted by YouTube poster)
 - Incorporate more than 1 subreddit to parse in config file.
 - Add list sorting
