@@ -138,7 +138,7 @@ def write_config_values(before_link):
 def updated_timestamp():
     ts = time.time()
     st = datetime.datetime.fromtimestamp(ts).strftime('%m-%d-%Y %H:%M:%S')
-    return("Last updated at: " + st + "<br/><br/>\n")
+    return("<p style='font-size: .8em;'>Last updated at: " + st + "</p>\n")
         
 def write_output():
     global tmpfile
