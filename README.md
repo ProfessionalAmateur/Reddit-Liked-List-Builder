@@ -23,7 +23,7 @@ Usage
     useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse 
 
     [OUTPUT]
-    format = (embeded|standard) The standard format will create a list of HTML href links.  The embeded format will create youtube and soundcloud embeded html in collapsible divs. Prereqs for using embeded: 1) jQuery 2) [Collapsible jQuery plugin - https://github.com/juven14/Collapsible](https://github.com/juven14/Collapsible)
+    format = (embeded|standard) The standard format will create a list of HTML href links.  The embeded format will create youtube and soundcloud embeded html in collapsible divs. Prereqs for using embeded: 1) jQuery 2) [Collapsible jQuery plugin - https://github.com/juven14/Collapsible](https://github.com/juven14/Collapsible) 3) While not required the css file, and images will add some a nice touch to the collapsible/expandible div's.
     
   
 3. Run the python script passing the configuration file location as a parameter:
