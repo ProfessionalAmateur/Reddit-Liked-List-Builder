@@ -7,7 +7,7 @@ As a frequent Reddit user I find a lot of good new music browsing the [electroni
 
 Usage
 -----
-1. Download the redditlikedlist.py and rll.cfg to a directory of your choice.
+1. Download the redditlikedlist.py and rll.cfg to a directory of your choice.  
 2. Populate the following fields in the rll.cfg file:
     
     [PATHS]  
@@ -20,7 +20,11 @@ Usage
     [CREDENTIALS]  
     username = Your Reddit username, must have a valid Reddit account to use this script.  
     password = Your Reddit password, must have a valid Reddit account to use this script.  
-    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse  
+    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse 
+
+    [OUTPUT]
+    format = (embeded|standard) The standard format will create a list of HTML href links.  The embeded format will create youtube and soundcloud embeded html in collapsible divs. Prereqs for using embeded: 1) jQuery 2) [Collapsible jQuery plugin - https://github.com/juven14/Collapsible](https://github.com/juven14/Collapsible)
+    
   
 3. Run the python script passing the configuration file location as a parameter:
 
@@ -33,6 +37,7 @@ Output
 
 The HTML file output will contain the last processed date stamp as well as a list of HTML links to media content.  Example:
 
+**Standard Output Sample**
 
     Last updated at: 2013-09-20 07:00:07<br/><br/>
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 1</a><br/>
@@ -40,6 +45,30 @@ The HTML file output will contain the last processed date stamp as well as a lis
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 3</a><br/>
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 4</a><br/>
     <a href='http://www.youtube.com/watch?v=XXXXXXXXXXX'>Music Video 5</a><br/>
+
+**Embeded Output Sample**
+
+    <div class='collapsible'>
+       <a href='http://www.youtube.com/watch?v=XXXXXXXXX'>Song 1 - Artist1</a><span></span>
+    </div>
+    <div class='container'>
+       <div class='content'>
+          <div>
+             <iframe width='420' height='315' src='//www.youtube.com/embed/XXXXXXXXXX' frameborder='0' allowfullscreen></iframe>
+          </div>
+       </div>
+    </div>
+    <div class='collapsible'>
+       <a href='https://soundcloud.com/ARTIST/SONG>Song 2 - Artist 2</a><span></span>
+    </div>
+    <div class='container'>
+       <div class='content'>
+          <div>
+             <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%XXXXXXXXXX&show_artwork=true"></iframe>
+          </div>
+       </div>
+    </div>
+
 
 To-do wishlist
 ---------------

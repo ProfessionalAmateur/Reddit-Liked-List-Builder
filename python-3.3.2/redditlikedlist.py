@@ -25,6 +25,7 @@ final_file_location = ''
 username = ''
 password = ''
 subreddit = ''
+output_format = ''
 iCounter = 0
 tmpfile = tempfile.TemporaryFile()
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
@@ -57,6 +58,7 @@ def load_config_values(config):
         global hdr
         global before_flag
         global link_value
+        global output_format
         final_file_location = config.get('PATHS','outputFile')
         subreddit = config.get('PATHS','subreddit')
         link_value = config.get('WAYPOINT','beforeLinkName')
@@ -65,6 +67,7 @@ def load_config_values(config):
         username = config.get('CREDENTIALS','username')
         password = config.get('CREDENTIALS','password')
         hdr['User-Agent'] = config.get('CREDENTIALS','useragent')
+        output_format = config.get('OUTPUT','format')
 
     except Exception as e:
         logging.error(e)
@@ -104,7 +107,19 @@ def process_reddit_data():
                     write_config_values(titles["data"]["name"])
 
                 if(titles["data"]["subreddit"]==subreddit and titles["data"]["media"] is not None):
-                    tmpfile.write(bytes('<a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><br/>\n', 'utf-8' ))
+                    if (output_format=="embeded"):
+                        if ("www.youtube.com" in titles["data"]["url"]):
+                           param = get_youtube_param(titles["data"]["url"])
+                           param = (param.replace("['","")).replace("']","")
+                           tmpfile.write(bytes('<div class=\'collapsible\'><a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><span></span></div><div class=\'container\'><div class=\'content\'><div><iframe width=\'420\' height=\'315\' src=\'//www.youtube.com/embed/'+ param +'\' frameborder=\'0\' allowfullscreen></iframe></div></div></div>\n', 'utf-8' ))
+                        
+                        elif ("soundcloud" in titles["data"]["url"]):
+                            embed_html = get_soundcloud_html(titles["data"]["url"])
+                            tmpfile.write(bytes('<div class=\'collapsible\'><a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><span></span></div><div class=\'container\'><div class=\'content\'><div>'+ embed_html +'</div></div></div>\n', 'utf-8' ))
+                        else:
+                            tmpfile.write(bytes('<a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><br/>\n', 'utf-8' ))
+                    else:
+                        tmpfile.write(bytes('<a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><br/>\n', 'utf-8' ))
 
     except Exception as e:
         logging.error(e)
@@ -162,6 +177,26 @@ def write_output():
         tmpfile.close()
     except Exception as e:
         logging.error(e)
+
+def get_youtube_param(url):
+    parsed = urllib.parse.urlparse(url)
+    param = str(urllib.parse.parse_qs(parsed.query)['v'])
+
+    return param
+
+# Get soundcloud embed html
+def get_soundcloud_html(url):
+    try:
+        sndcld_url = 'http://soundcloud.com/oembed?format=json&url=' + url + '&iframe=true'
+        print(sndcld_url)
+        url = urllib.request.Request(sndcld_url)
+        r = opener.open(url).read()
+        output = r.decode('utf-8')
+        html = json.loads(output)["html"]
+    except Exception as e:
+        logging.error(e)
+
+    return html
 
 # generic replace text using dict function
 def replace_all(text, dic):
