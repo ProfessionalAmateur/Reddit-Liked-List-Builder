@@ -3,7 +3,9 @@ Reddit Liked List Builder
 
 Overview
 --------
-As a frequent Reddit user I find a lot of good new music browsing the [electronic music subreddit](http://www.reddit.com/r/electronicmusic) but never had a good way to keep track of it.  Wanting to relisten to a song I had liked I would have to browse through my history but after a week or two any link I upvoted would be buried several pages deep, kind of a hassle.  The Reddit Liked Link Builder is a result of this manual search burden.  This script will parse a users 'liked' history for a given subreddit and output a list of HTML links to a file.  In its current state the Reddit link must have "media": data associated with it.  This was done to prevent 'self' posts or regular article from appearing in the list.
+As a frequent Reddit user I find a lot of good new music browsing the [electronic music subreddit](http://www.reddit.com/r/electronicmusic) but never had a good way to keep track of it.  Wanting to relisten to a song I had previously liked I needed to browse through my liked history.  However after a week or two any link I upvoted would be buried several pages deep, proving to be kind of a hassle.  
+
+The Reddit Liked Link Builder solves the problem of needing to manually search.  This script will parse a users 'liked' history for a given subreddit and output a list of HTML links to a file.  In its current state the Reddit link must have "media": data associated with it.  This was done to prevent 'self' posts or regular article from appearing in the list.
 
 Usage
 -----
