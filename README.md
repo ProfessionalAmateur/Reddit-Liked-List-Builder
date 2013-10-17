@@ -9,8 +9,8 @@ The Reddit Liked Link Builder solves the problem of needing to manually search. 
 
 Usage
 -----
- Download the redditlikedlist.py and rll.cfg to a directory of your choice.  
- Populate the following fields in the rll.cfg file:
+1) Download the redditlikedlist.py and rll.cfg to a directory of your choice.  
+2) Populate the following fields in the rll.cfg file:
 
     [PATHS]  
     outputfile = The destination of the output file.  Example: /home/John/musiclist.HTML  
@@ -33,7 +33,7 @@ Usage
              3) While not required the css file, and images will add some a nice touch to the collapsible/expandible div's.   
 
 
- Run the python script passing the configuration file location as a parameter:
+3) Run the python script passing the configuration file location as a parameter:
 
     $> python redditlikedlist.py rll.cfg
 
