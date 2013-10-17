@@ -22,7 +22,8 @@ Usage
     [CREDENTIALS]  
     username = Your Reddit username, must have a valid Reddit account to use this script.  
     password = Your Reddit password, must have a valid Reddit account to use this script.  
-    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse  
+    useragent = Reddit requires a unique user agent for all calls to its API, it is recommended  
+                you incorporate your username in the agent.  Example: BobaFett37's Liked List Parse  
     
     [OUTPUT]  
     format = (embeded|standard) The standard format will create a list of HTML href links.  
