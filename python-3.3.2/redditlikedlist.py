@@ -4,7 +4,6 @@
 #
 import time
 import datetime
-import urllib.request, urllib.parse, urllib.error
 import urllib.request, urllib.error, urllib.parse
 import http.cookiejar
 import json
@@ -188,7 +187,7 @@ def get_youtube_param(url):
 def get_soundcloud_html(url):
     try:
         sndcld_url = 'http://soundcloud.com/oembed?format=json&url=' + url + '&iframe=true'
-        print(sndcld_url)
+#        print(sndcld_url)
         url = urllib.request.Request(sndcld_url)
         r = opener.open(url).read()
         output = r.decode('utf-8')
