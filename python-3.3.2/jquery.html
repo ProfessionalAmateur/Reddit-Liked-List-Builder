@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    $(".togglevid").click(function(){
+        $(this).children("img").toggleClass("plus-img minus-img");
+        $(this).next().toggle("fast");
+        $(this).next().children("iframe").attr("src",$(this).next().children("iframe").attr("data-src"));
+        $(this).next().children("iframe").removeAttr("data-src");
+    });
+    $(".video").toggle();
+</script>
