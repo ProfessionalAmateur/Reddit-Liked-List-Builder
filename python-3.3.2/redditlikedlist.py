@@ -110,11 +110,11 @@ def process_reddit_data():
                         if ("www.youtube.com" in titles["data"]["url"]):
                            param = get_youtube_param(titles["data"]["url"])
                            param = (param.replace("['","")).replace("']","")
-                           tmpfile.write(bytes('<div class=\'togglevid\'><img class=\'plus-img\'>' + titles["data"]["title"] + '</div><div class=\'video\'><iframe width=\'420\' height=\'315\' src=\'//www.youtube.com/embed/'+ param +'\' frameborder=\'0\' allowfullscreen></iframe></div>\n', 'utf-8' ))
+                           tmpfile.write(bytes('<div class=\'togglevid\'><img class=\'plus-img\' src=\'/images/trans.png\'>' + titles["data"]["title"] + '</div><div class=\'video\'><iframe width=\'420\' height=\'315\' src=\'//www.youtube.com/embed/'+ param +'\' frameborder=\'0\' allowfullscreen></iframe></div>\n', 'utf-8' ))
                         
                         elif ("soundcloud" in titles["data"]["url"]):
                             embed_html = get_soundcloud_html(titles["data"]["url"])
-                            tmpfile.write(bytes('<div class=\'togglevid\'><img class=\'plus-img\'>'+ titles["data"]["title"] + '</div><div class=\'video\'>'+ embed_html +'</div>\n', 'utf-8' ))
+                            tmpfile.write(bytes('<div class=\'togglevid\'><img class=\'plus-img\' src=\'/images/trans.png\'>'+ titles["data"]["title"] + '</div><div class=\'video\'>'+ embed_html +'</div>\n', 'utf-8' ))
                         else:
                             tmpfile.write(bytes('<a href=\''+ titles["data"]["url"] + '\'>' + titles["data"]["title"] + '</a><br/>\n', 'utf-8' ))
                     else:
