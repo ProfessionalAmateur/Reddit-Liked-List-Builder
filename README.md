@@ -43,7 +43,7 @@ The first time the script is run it will start with your most recent liked links
 Output
 ------
 
-The HTML file output will contain the last processed date stamp as well as a list of HTML links to media content.  The src tags have been labeled data-src and will be toggled on the expansion of the div to help speed up performance of the page load.  Example:
+The HTML file output will contain the last processed date stamp as well as a list of HTML links to media content.  The src attributes have been labeled data-src and will be toggled on the expansion of the div to help speed up performance of the page load.  Example:
 
 **Standard Output Sample**
 
