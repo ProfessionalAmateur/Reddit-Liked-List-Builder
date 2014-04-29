@@ -30,9 +30,8 @@ Usage
              The embeded format will create youtube and soundcloud embeded html in collapsible divs.  
              Prereqs for using embeded:  
              1) jQuery  
-             2) Collapsible jQuery plugin - https://github.com/juven14/Collapsible  
-             3) While not required the css file, and images will add some a nice touch to  
-                the collapsible/expandible div's.   
+             2) jQuery script/html  
+             3) The css file and images for the  collapsible/expandible div's.   
 
 
 3) Run the python script passing the configuration file location as a parameter:
@@ -57,26 +56,10 @@ The HTML file output will contain the last processed date stamp as well as a lis
 
 **Embeded Output Sample**
 
-    <div class='collapsible'>
-       <a href='http://www.youtube.com/watch?v=XXXXXXXXX'>Song 1 - Artist1</a><span></span>
-    </div>
-    <div class='container'>
-       <div class='content'>
-          <div>
-             <iframe width='420' height='315' src='//www.youtube.com/embed/XXXXXXXXXX' frameborder='0' allowfullscreen></iframe>
-          </div>
-       </div>
-    </div>
-    <div class='collapsible'>
-       <a href='https://soundcloud.com/ARTIST/SONG>Song 2 - Artist 2</a><span></span>
-    </div>
-    <div class='container'>
-       <div class='content'>
-          <div>
-             <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%XXXXXXXXXX&show_artwork=true"></iframe>
-          </div>
-       </div>
-    </div>
+    <div class='togglevid'><img class="plus-img">Song 1 - Artist1</div>
+    <div class='video'><iframe width='420' height='315' src='//www.youtube.com/embed/XXXXXXXXXX' frameborder='0' allowfullscreen></iframe></div>
+    <div class='togglevid'>Song 2 - Artist 2</div>
+    <div class='video'><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%XXXXXXXXXX&show_artwork=true"></iframe></div>
 
 
 To-do wishlist
