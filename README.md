@@ -56,9 +56,9 @@ The HTML file output will contain the last processed date stamp as well as a lis
 
 **Embeded Output Sample**
 
-    <div class='togglevid'><img class="plus-img">Song 1 - Artist1</div>
+    <div class='togglevid'><img class="plus-img" src="/images/trans.png">Song 1 - Artist1</div>
     <div class='video'><iframe width='420' height='315' data-src='//www.youtube.com/embed/XXXXXXXXXX' frameborder='0' allowfullscreen></iframe></div>
-    <div class='togglevid'><img class="plus-img">Song 2 - Artist 2</div>
+    <div class='togglevid'><img class="plus-img" src="/images/trans.png">Song 2 - Artist 2</div>
     <div class='video'><iframe width="100%" height="166" scrolling="no" frameborder="no" data-src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%XXXXXXXXXX&show_artwork=true"></iframe></div>
 
 
